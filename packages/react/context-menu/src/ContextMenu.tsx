@@ -227,7 +227,6 @@ const ContextMenuContent = React.forwardRef<ContextMenuContentElement, ContextMe
           if (!event.defaultPrevented && !context.modal) hasInteractedOutsideRef.current = true;
         }}
         style={{
-          ...props.style,
           // re-namespace exposed content custom properties
           ...{
             '--radix-context-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
@@ -236,6 +235,7 @@ const ContextMenuContent = React.forwardRef<ContextMenuContentElement, ContextMe
             '--radix-context-menu-trigger-width': 'var(--radix-popper-anchor-width)',
             '--radix-context-menu-trigger-height': 'var(--radix-popper-anchor-height)',
           },
+          ...props.style,
         }}
       />
     );
@@ -504,7 +504,6 @@ const ContextMenuSubContent = React.forwardRef<
       {...subContentProps}
       ref={forwardedRef}
       style={{
-        ...props.style,
         // re-namespace exposed content custom properties
         ...{
           '--radix-context-menu-content-transform-origin': 'var(--radix-popper-transform-origin)',
@@ -513,6 +512,7 @@ const ContextMenuSubContent = React.forwardRef<
           '--radix-context-menu-trigger-width': 'var(--radix-popper-anchor-width)',
           '--radix-context-menu-trigger-height': 'var(--radix-popper-anchor-height)',
         },
+        ...props.style,
       }}
     />
   );
